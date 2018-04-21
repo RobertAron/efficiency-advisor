@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import React,{Component} from 'react';
 import ReactMapGL from 'react-map-gl';
 
 class Map extends Component {
@@ -22,3 +22,5 @@ class Map extends Component {
     );
   }
 }
+
+export default Map;
