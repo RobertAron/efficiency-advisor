@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
-import FlatButton from 'material-ui/FlatButton';
+
+
 class App extends Component {
   render() {
     return (
