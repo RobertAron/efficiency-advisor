@@ -29,9 +29,11 @@ export default class App extends Component {
                 <div className = "Slide">
                     <div className = "Icon">
                     </div>
-                    <h4>Get insurance rewards with State Farm</h4>
-                    <h5>"State Farm is a long-time proponent of safe driving, but did you know that safer driving habits can also bring greener driving results?"</h5>
-                    <a>"Learn more about Drive Safe and Save"</a>
+                    <div className = "Slide-Text">
+                      <p style = {{color: "red",fontSize: 20}}>Get insurance rewards with State Farm</p>
+                      <p style = {{fontSize: 16}}>"State Farm is a long-time proponent of safe driving, but did you know that safer driving habits can also bring greener driving results?"</p>
+                      <p style = {{fontSize: 18}}>"Learn more about Drive Safe and Save"</p>
+                    </div>
                 </div>
                 <div className = "Slide">
                 </div>

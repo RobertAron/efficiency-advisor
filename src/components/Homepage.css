@@ -40,8 +40,8 @@
   .Icon {
       border-radius: 100%;
       background-color: white;
-      height: 100px;
-      width: 100px;
+      height: 150px;
+      width: 200px;
   }
 
   .Text-white {
@@ -49,6 +49,12 @@
   }
 
   .Text-center {
+    text-align: center;
+  }
+
+  .Slide-Text {
+    margin-left: 25px;
+    margin-right: 25px;
     text-align: center;
   }
 
