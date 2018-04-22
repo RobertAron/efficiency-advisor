@@ -27,12 +27,6 @@ class TravelDetails extends Component {
                     push={this.tabBasedUpdate} 
                     getDistance={() => this.map.getDestinationDistance()}
                     travelMode = {this.props.match.params.travelMode}/>
-                <input
-
-                    placeholder="start address here"
-                    onChange={e => this.setState({ origin: e.target.value })}
-                />
-                <button onClick={() => console.log(this.map.getDestinationDistance())}>Draw route!</button>
             </div >
         )
     }
