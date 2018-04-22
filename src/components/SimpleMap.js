@@ -9,8 +9,9 @@ class SimpleMap extends Component {
 	state = {
 		startLocation: null,
 		endLocation: null,
-		direction: null,
+		directions: null,
 		flightPath: null,
+		destinationDistance: null,
 	};
 
 
@@ -27,6 +28,7 @@ class SimpleMap extends Component {
 				travelMode
 			}, function (directions, status) {
 				if (status === 'OK') {
+					console.log(directions)
 					self.setState({
 						directions,
 						flightPath: null
@@ -47,7 +49,6 @@ class SimpleMap extends Component {
 						{ lat: start_location.lat(), lng: start_location.lng() },
 						{ lat: end_location.lat(), lng: end_location.lng() }
 					];
-					console.log(directions.routes[0].legs[0].start_location)
 					self.setState({
 						flightPath,
 						directions: null
@@ -63,6 +64,10 @@ class SimpleMap extends Component {
 		this.directionsService = new google.maps.DirectionsService();
 		const { origin, destination, travelMode }  = this.props
 		this.drawRoute(origin,destination,travelMode);
+	}
+
+	getDestinationDistance(){
+		return this.state.directions.routes[0].legs[0].distance;
 	}
 
 

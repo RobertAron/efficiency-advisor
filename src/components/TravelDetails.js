@@ -17,11 +17,10 @@ class TravelDetails extends Component {
                     placeholder="start address here"
                     onChange={e => this.setState({ origin: e.target.value })}
                 />
-                <button onClick={() => this.map.drawRoute(origin, destination, 'FLIGHT')}>Draw route!</button>
+                <button onClick={() => console.log(this.map.getDestinationDistance())}>Draw route!</button>
             </div >
         )
     }
-
 }
 
 export default TravelDetails;
