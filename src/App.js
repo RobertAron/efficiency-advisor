@@ -6,25 +6,25 @@ import './App.css';
 import InputForm from "./components/input-form"
 import MapDetails from "./components/MapDetails"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Header from './components/Header';
 
 
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <MuiThemeProvider>
-          <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h1 className="App-title">Welcome to React</h1>
-            </header>
-            <Route exact path="/" component={Homepage} />
-            <Route path="/Form" component={InputForm}/>
-            <Route path="/Map" component={MapDetails} />
-          </div>
-        </MuiThemeProvider>
-      </Router>
+      <div>
+        <Header />
+        <Router>
+          <MuiThemeProvider>
+            <div className="App">
+              <Route exact path="/" component={Homepage} />
+              <Route path="/Form" component={InputForm}/>
+              <Route path="/Map" component={MapDetails} />
+            </div>
+          </MuiThemeProvider>
+        </Router>
+      </div>
     );
   }
 }
