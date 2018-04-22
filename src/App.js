@@ -18,13 +18,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Router>
           <MuiThemeProvider>
             <div className="App">
               <Route exact path="/" component={Homepage} />
               <Route path="/Form" component={InputForm}/>
-              <Route path="/Map/:travelMode(DRIVING|WALKING|BICYCLING|TRANSIT|FLIGHT)/:origin/:destination" component={TravelDetails} />
+              <Route path="/Map/:travelMode(DRIVING|WALKING|BICYCLING|TRANSIT|FLIGHT)/:origin/:destination/:year?/:make?/:model?" component={TravelDetails} />
             </div>
           </MuiThemeProvider>
         </Router>

@@ -1,3 +1,10 @@
 .tabablePaper{
-    width: 400px;
+    width: 450px;
+    height: 400px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-left: 10px;
+    margin-top: 10px;
+
 }

@@ -5,7 +5,11 @@ const Map = withGoogleMap(props => (
   <GoogleMap {...props}>
 		{props.directions && <DirectionsRenderer directions={props.directions} />}
 		{props.flightPath && <PolyLine path={props.flightPath}/>}
+		
 	</GoogleMap>)
+
+	
 );
+
 
 export default Map;

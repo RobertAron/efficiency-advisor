@@ -114,7 +114,7 @@ class InputForm extends Component {
 					<div className={hiddenSubmitButton}>
 						<RaisedButton
 							label="Submit"
-							onClick={() => this.props.history.push(`/Map/DRIVING/${this.state.startingLocation}/${this.state.endingLocation}`)}
+							onClick={() =>  this.props.history.push(`/Map/DRIVING/${this.state.startingLocation}/${this.state.endingLocation}/${this.state.carYear}/${this.state.carMake}/${this.state.carModel}`)}
 						/>
 
 					</div>
