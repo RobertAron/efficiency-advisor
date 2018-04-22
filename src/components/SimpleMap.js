@@ -5,13 +5,7 @@ import Map from './Map';
 const google = window.google;
 
 class SimpleMap extends Component {
-	static defaultProps = {
-		center: {
-			lat: 32.9,
-			lng: -96.5
-		},
-		zoom: 10
-	};
+	static defaultProps = {};
 
 	state = {
 		startLocation: null,
@@ -19,10 +13,10 @@ class SimpleMap extends Component {
 		direction: null
 	};
 
-	drawRoute = () => {
-		const origin = "Carrollton"
-		const destination = "2460 Jefferson Court Ln, Arlington Texas"
-		const travelMode = "DRIVING"
+	drawRoute = (origin, destination, travelMode) => {
+		// const origin = "Carrollton"
+		// const destination = "2460 Jefferson Court Ln, Arlington Texas"
+		// const travelMode = "DRIVING"
 
 		// Scope
 		const self = this;
@@ -33,7 +27,7 @@ class SimpleMap extends Component {
 			origin,
 			destination,
 			travelMode
-		}, function(directions, status) {
+		}, function (directions, status) {
 			if (status === 'OK') {
 				self.setState({ directions });
 			} else {
@@ -44,7 +38,7 @@ class SimpleMap extends Component {
 
 	componentDidMount() {
 		this.directionsService = new google.maps.DirectionsService;
-		this.drawRoute();
+		// this.drawRoute();
 	}
 
 
@@ -57,9 +51,8 @@ class SimpleMap extends Component {
 					loadingElement={<div style={{ height: `100%` }} />}
 					containerElement={<div style={{ height: `400px` }} />}
 					mapElement={<div style={{ height: `100%` }} />}
-					defaultCenter={this.props.center}
-					defaultZoom={this.props.zoom}
-					route={this.state.route}
+					defaultCenter={{ lat: 40, lng: -95 }}
+					defaultZoom={4}
 					directions={this.state.directions}
 				/>
 			</div>
