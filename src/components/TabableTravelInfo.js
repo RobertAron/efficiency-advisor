@@ -33,6 +33,7 @@ class TabableTravelInfo extends Component {
     }
 
     setCurrentStateDistance(){
+        console.log(this.props.getDistance());
         switch(this.state.slideIndex){
             case 0: this.setState({drivingDistance: this.props.getDistance().text}); break;
             case 1: this.setState({walkingDistance: this.props.getDistance().text}); break;

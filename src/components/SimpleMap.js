@@ -103,7 +103,8 @@ class SimpleMap extends Component {
 			const lng2 = this.state.flightPath[1].lng
 			const miles = calcCrow(lat1,lng1,lat2,lng2)
 			const formatedDistance = numberWithCommas(miles.toFixed()) + " mi"
-			return {text: formatedDistance}
+			const value = (1609.773676880223 * miles).toFixed();
+			return {text: formatedDistance, value}
 		}
 		return this.state.directions.routes[0].legs[0].distance;
 	}
