@@ -8,12 +8,17 @@
 }
 
 .Header {
-  padding-bottom: 25px;
   padding-top: 25px;
+  padding-bottom: 50px;
   margin: auto;
   width: 100%;
   font-size: 36px;
   text-align: center;
+}
+
+.Background {
+  overflow: hidden;
+  background-size: cover;
 }
 
 .App-header {

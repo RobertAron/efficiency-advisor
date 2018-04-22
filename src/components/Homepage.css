@@ -5,9 +5,11 @@
 
   .Box {
     background-color: #E5E9F2;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     padding-top: 25px;
     padding-bottom: 50px;
+    height: 250px;
     width: 100%;
   }
 
@@ -19,6 +21,9 @@
   }
 
   .Button {
+    display: flex;
+    align-self: center;
+    margin-top: 35px;
     width: 150px;
     height: 50px;
   }

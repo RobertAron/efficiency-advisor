@@ -31,18 +31,22 @@ export default class App extends Component {
       <div className="Container">
         <div className={["Box", "Text-center"].join(' ')}>
           <p className="Text-center">A Fuel Saver and Money Saver</p>
-          <h2 className="Text-center"> What is the most energy efficient mode of transportation for my trip? </h2>
+          <h2 className="Text-center"
+          style = {{
+            marginTop: '35px'
+          }}>What is the most energy efficient mode <br />of transportation for my trip?</h2>
           <RaisedButton
             backgroundColor="#27ae60"
             labelStyle={{
               textTransform: 'none',
               color: 'white',
+              fontSize: '16px'
             }}
             className="Button"
             buttonStyle={{
               height: '50px'
             }}
-            label="Create a trip"
+            label="Create your trip"
             onClick={this.goForward}>
 
           </RaisedButton>
