@@ -3,16 +3,6 @@
     flex-direction: column
 }
 
-.Header {
-    background-color: #C8C8C8;
-    padding-bottom: 25px;
-    padding-top: 25px;
-    margin: auto;
-    width: 100%;
-    text-indent: 50px;
-    font-size: 36px;
-  }
-
   .Box {
     background-color: #E5E9F2;
     display: inline-block;

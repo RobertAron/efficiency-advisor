@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField'
+import { Link } from 'react-router-dom'
 var classNames = require('classnames');
 
 class InputForm extends Component {
 	constructor(props) {
-    super(props);
+	super(props);
+	this.goForward = this.goForward.bind(this);
     this.state = { 
 			FormCompletetion: 0,
 			forwardAnimation: true,
@@ -18,6 +20,10 @@ class InputForm extends Component {
 			endingLocation: '',
 			hiddenBackButton: true
 		};
+	}
+
+	goForward(){
+		this.props.history.push('/Map');
 	}
 	
 

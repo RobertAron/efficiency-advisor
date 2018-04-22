@@ -50,6 +50,7 @@ export default class App extends Component {
 
         <div className="Footer">
           <Card className="Slide"
+          zDepth = {3}
           >
             <CardMedia
               className="Image">
@@ -68,11 +69,13 @@ export default class App extends Component {
             <CardActions>
             </CardActions>
           </Card>
-          <Card className="Slide">
+          <Card className="Slide"
+          zDepth = {3}>
 
           </Card>
 
-          <Card className="Slide">
+          <Card className="Slide"
+          zDepth = {3}>
             <CardMedia
               style={{
                 width: '225px',
