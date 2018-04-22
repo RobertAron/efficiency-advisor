@@ -3,9 +3,9 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 // From https://github.com/oliviertassinari/react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
 import Paper from 'material-ui/Paper';
+import SwipeableViewComponet from "./SwipeableViewComponet"
+
 import './TabableTravelInfo.css'
-
-
 
 class TabableTravelInfo extends Component {
     constructor(props) {
@@ -85,21 +85,30 @@ class TabableTravelInfo extends Component {
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                 >
-                    <div>
-                        <p>{this.state.drivingDistance}</p>
-                    </div>
-                    <div>
-                        <p>{this.state.walkingDistance}</p>
-                    </div>
-                    <div>
-                        <p>{this.state.bicyclingDistance}</p>
-                    </div>
-                    <div>
-                        <p>{this.state.transitDistance}</p>
-                    </div>
-                    <div>
-                        <p>{this.state.flightDistnace}</p>
-                    </div>
+                    <SwipeableViewComponet 
+                        distance={this.state.drivingDistance}
+                        travelMode={this.state.slideIndex}
+                    />
+
+                    <SwipeableViewComponet 
+                        distance={this.state.walkingDistance}
+                        travelMode={this.state.slideIndex}
+                    />
+
+                    <SwipeableViewComponet 
+                        distance={this.state.bicyclingDistance}
+                        travelMode={this.state.slideIndex}
+                    />
+
+                    <SwipeableViewComponet
+                        distance={this.state.transitDistance}
+                        travelMode={this.state.slideIndex}
+                    />
+
+                    <SwipeableViewComponet
+                        distance={this.state.flightDistnace}
+                        travelMode={this.state.slideIndex}
+                    />
                 </SwipeableViews>
             </Paper>
         );

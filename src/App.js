@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Router>
           <MuiThemeProvider>
             <div className="App">
