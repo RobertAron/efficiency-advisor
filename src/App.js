@@ -4,23 +4,27 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Homepage from './components/Homepage'
 import './App.css';
 import InputForm from "./components/input-form"
+import MapDetails from "./components/MapDetails"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import SimpleMap from './components/SimpleMap'
 
 
 class App extends Component {
-  state = {
-    origin: '',
-    destination: 'Arlingon, tX'
-  }
-
   render() {
-    const { origin, destination } = this.state;
-
     return (
-      <MuiThemeProvider>
-        <Homepage />
-      </MuiThemeProvider>
+      <Router>
+        <MuiThemeProvider>
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h1 className="App-title">Welcome to React</h1>
+            </header>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/Form" component={InputForm}/>
+            <Route path="/Map" component={MapDetails} />
+          </div>
+        </MuiThemeProvider>
+      </Router>
     );
   }
 }
