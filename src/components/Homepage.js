@@ -13,7 +13,7 @@ export default class App extends Component {
     super(props);
 
     this.goForward = this.goForward.bind(this)
-
+    this.goUber = this.goUber.bind(this)
 
     this.state = {
 
@@ -51,6 +51,7 @@ export default class App extends Component {
         <div className="Footer">
           <Card className="Slide"
           zDepth = {3}
+          onClick = {() => window.location = 'https://www.statefarm.com/insurance/auto/discounts/drive-safe-save'}
           >
             <CardMedia
               className="Image">
@@ -70,12 +71,14 @@ export default class App extends Component {
             </CardActions>
           </Card>
           <Card className="Slide"
-          zDepth = {3}>
+          zDepth = {3}
+          onClick = {() => window.location = 'https://www.uber.com/ride/'}>
 
           </Card>
 
           <Card className="Slide"
-          zDepth = {3}>
+          zDepth = {3}
+          onClick = {() => window.location = 'https://www.southwest.com/flight/shortcut/low-fare-search.html'}>
             <CardMedia
               style={{
                 width: '225px',
