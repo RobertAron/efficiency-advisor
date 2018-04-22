@@ -14,7 +14,7 @@ class TravelDetails extends Component {
 
 
         const { travelMode, origin, destination } = this.props.match.params
-        console.log(this.props)
+        console.log(this.props.match.params.travelMode)
         return (
             <div className="details-container">
                 <SimpleMap
@@ -23,7 +23,10 @@ class TravelDetails extends Component {
                     destination={destination}
                     ref={map => { this.map = map; }}
                 />
-                <TabableTravelInfo push={this.tabBasedUpdate} />
+                <TabableTravelInfo 
+                    push={this.tabBasedUpdate} 
+                    getDistance={() => this.map.getDestinationDistance()}
+                    travelMode = {this.props.match.params.travelMode}/>
                 <input
 
                     placeholder="start address here"
