@@ -44,6 +44,7 @@ class SimpleMap extends Component {
 				travelMode: "DRIVING"
 			}, function (directions, status) {
 				if (status === 'OK') {
+					console.log(directions.routes[0].legs[0].distance.text)
 					const { start_location,end_location} =  directions.routes[0].legs[0];
 					const flightPath = [
 						{ lat: start_location.lat(), lng: start_location.lng() },
