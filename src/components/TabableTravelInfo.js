@@ -10,21 +10,62 @@ import './TabableTravelInfo.css'
 class TabableTravelInfo extends Component {
     constructor(props) {
         super(props);
+        let slideIndex;
+        switch (props.travelMode) {
+            case "DRIVING": slideIndex = 0; break;
+            case "WALKING": slideIndex = 1; break;
+            case "BICYCLING": slideIndex = 2; break;
+            case "TRANSIT": slideIndex = 3; break;
+            case "FLIGHT": slideIndex = 4; break;
+        }
         this.state = {
-            slideIndex: 0,
-        };
+            slideIndex,
+            drivingDistance: 0,
+            walkingDistance:0,
+            bicyclingDistance:0,
+            transitDistance:0,
+            flightDistnace:0
+        }
+    }
+
+    componentWillMount(){
+        setTimeout(()=>this.setCurrentStateDistance(), 1500);
+    }
+
+    setCurrentStateDistance(){
+        console.log(this.props.getDistance());
+        switch(this.state.slideIndex){
+            case 0: this.setState({drivingDistance: this.props.getDistance().text}); break;
+            case 1: this.setState({walkingDistance: this.props.getDistance().text}); break;
+            case 2: this.setState({bicyclingDistance: this.props.getDistance().text}); break;
+            case 3: this.setState({transitDistance: this.props.getDistance().text}); break;
+            case 4: this.setState({flightDistnace: this.props.getDistance().text}); break;
+        }
+    }
+
+    setSlideBasedString(travelMode) {
+        switch (travelMode) {
+            case "DRIVING": this.setState({ slideIndex: 0 }); break;
+            case "WALKING": this.setState({ slideIndex: 1 }); break;
+            case "BICYCLING": this.setState({ slideIndex: 2 }); break;
+            case "TRANSIT": this.setState({ slideIndex: 3 }); break;
+            case "FLIGHT": this.setState({ slideIndex: 4 }); break;
+        }
+    }
+
+    componentWillReceiveProps(nextProps, nextState) {
+        this.setSlideBasedString(nextProps.travelMode);
+        setTimeout(()=>this.setCurrentStateDistance(), 500);
+        console.log(this.state)
     }
 
     handleChange = (value) => {
-        this.setState({
-            slideIndex: value,
-        });
         switch (value) {
-            case 0: this.props.push("DRIVING");break;
-            case 1: this.props.push("WALKING");break;
-            case 2: this.props.push("BICYCLING");break;
-            case 3: this.props.push("TRANSIT");break;
-            case 4: this.props.push("FLIGHT");break;
+            case 0: this.props.push("DRIVING"); break;
+            case 1: this.props.push("WALKING"); break;
+            case 2: this.props.push("BICYCLING"); break;
+            case 3: this.props.push("TRANSIT"); break;
+            case 4: this.props.push("FLIGHT"); break;
         }
     };
 
@@ -45,19 +86,19 @@ class TabableTravelInfo extends Component {
                     onChangeIndex={this.handleChange}
                 >
                     <div>
-                        <p>DRIVING</p>
+                        <p>{this.state.drivingDistance}</p>
                     </div>
                     <div>
-                        <p>WALKING</p>
+                        <p>{this.state.walkingDistance}</p>
                     </div>
                     <div>
-                        <p>BICYCLING</p>
+                        <p>{this.state.bicyclingDistance}</p>
                     </div>
                     <div>
-                        <p>TRANSIT</p>
+                        <p>{this.state.transitDistance}</p>
                     </div>
                     <div>
-                        <p>FLIGHT</p>
+                        <p>{this.state.flightDistnace}</p>
                     </div>
                 </SwipeableViews>
             </Paper>
