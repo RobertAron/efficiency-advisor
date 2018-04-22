@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardMedia, CardTitle, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 import './Homepage.css';
+import Header from './Header';
 import StateFarm from '../images/State-farm.png'
 import Southwest from '../images/southwest.png'
 import { RaisedButton } from 'material-ui';
@@ -29,6 +30,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="Container">
+        <Header> </Header>
         <div className={["Box", "Text-center"].join(' ')}>
           <p className="Text-center">A Fuel Saver and Money Saver</p>
           <h2 className="Text-center"> What is the most energy efficient mode of transportation for my trip? </h2>
