@@ -28,9 +28,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <Header /> */}
         <Router>
-          <MuiThemeProvider muiTheme={muiTheme}>
+          <MuiThemeProvider>
             <div className="App">
               <Route exact path="/" component={Homepage} />
               <Route path="/Form" component={InputForm}/>

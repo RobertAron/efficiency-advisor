@@ -9,9 +9,9 @@ var classNames = require('classnames');
 
 class InputForm extends Component {
 	constructor(props) {
-	super(props);
-	this.goForward = this.goForward.bind(this);
-    this.state = { 
+		super(props);
+		this.goForward = this.goForward.bind(this);
+		this.state = {
 			FormCompletetion: 0,
 			forwardAnimation: true,
 			inputTerm: '',
@@ -26,83 +26,86 @@ class InputForm extends Component {
 		};
 	}
 
-	goForward(){
+	goForward() {
 		this.props.history.push('/Map');
 	}
-	
+
 
 	render() {
 		// {console.log(this.state.hiddenBackButton)}
 		// {console.log(this.state.FormCompletetion)}
-		let div = classNames( 'div', {
-			'animated bounceInLeft': ( this.props.selected ),
+		let div = classNames('div', {
+			'animated bounceInLeft': (this.props.selected),
 			'animated bounceInLeft': this.state.forwardAnimation === true,
 			'animated bounceOutLeft': this.state.forwardAnimation === false
-			
+
 		});
-		let formButton = classNames( 'formButton', {
+		let formButton = classNames('formButton', {
 			'hidden': this.state.hiddenBackButton === true,
 			'': this.state.hiddenBackButton === false
-		} );
-		let hiddenEnterButton = classNames( 'hiddenEnterButton', {
+		});
+		let hiddenEnterButton = classNames('hiddenEnterButton', {
 			'hidden': this.state.hiddenEnterButton === true,
 			'': this.state.hiddenEnterButton === false
-		} );
-		let hiddenSubmitButton = classNames( 'hiddenSubmitButton', {
+		});
+		let hiddenSubmitButton = classNames('hiddenSubmitButton', {
 			'hidden': this.state.hiddenSubmitButton === true,
 			'': this.state.hiddenSubmitButton === false
-		} );
+		});
 
 		let fields = [
-			{text: 'Enter Car Make', stateString: "carMake"},
-				{text: 'Enter Car Model',  stateString: "carModel"},
-				{text: 'Enter Car Year',  stateString: "carYear"},
-				{text: 'Enter starting Location',  stateString: "startingLocation"},
-				{text: 'Enter ending Location',  stateString: "endingLocation"}];
+			{ text: 'Enter Car Make', stateString: "carMake" },
+			{ text: 'Enter Car Model', stateString: "carModel" },
+			{ text: 'Enter Car Year', stateString: "carYear" },
+			{ text: 'Enter starting Location', stateString: "startingLocation" },
+			{ text: 'Enter ending Location', stateString: "endingLocation" }];
 
 		return (
 			<div className="formInputs">
 				<div className={div}>
-					
+
 					<div className={formButton}>
 						<RaisedButton
 							label="Back"
-							onClick={ (e) => {
-								this.setState({ FormCompletetion: this.state.FormCompletetion - 1, forwardAnimation: false})
-									setTimeout(() => {
-										this.state.FormCompletetion === 0 ? this.setState({hiddenBackButton: true}) : this.setState({hiddenBackButton: false})
-										this.setState({forwardAnimation: true})
-									}, 10);
+							onClick={(e) => {
+								this.setState({ FormCompletetion: this.state.FormCompletetion - 1, forwardAnimation: false })
+								setTimeout(() => {
+									this.state.FormCompletetion === 0 ? this.setState({ hiddenBackButton: true }) : this.setState({ hiddenBackButton: false })
+									this.setState({ forwardAnimation: true })
+								}, 10);
 								this.textInput.input.value = ''
 								if (this.state.FormCompletetion === 4) {
-									this.setState({hiddenSubmitButton: true, hiddenEnterButton: false })
+									this.setState({ hiddenSubmitButton: true, hiddenEnterButton: false })
 								}
 							}}
 						/>
 					</div>
 
-					<TextField 
+					<TextField
 						ref={x => this.textInput = x}
+						autoFocus
 						hintText={fields[this.state.FormCompletetion].hint}
 						floatingLabelText={fields[this.state.FormCompletetion].text}
-						onChange={ (e) => {
-							this.setState({ [fields[this.state.FormCompletetion].stateString] : e.target.value })
-						} }
+						onChange={(e) => {
+							this.setState({ [fields[this.state.FormCompletetion].stateString]: e.target.value })
+						}}
 					/>
-					
+
 					<div className={hiddenEnterButton}>
 						<RaisedButton
 							label="Enter"
-							onClick={ (e) => {
-								this.setState({ FormCompletetion: this.state.FormCompletetion + 1, forwardAnimation: false})
+							onClick={(e) => {
+								this.setState({ FormCompletetion: this.state.FormCompletetion + 1, forwardAnimation: false })
 								setTimeout(() => {
-									this.setState({forwardAnimation: true})
-									this.state.FormCompletetion >= 1 && this.setState({hiddenBackButton: false})
+									this.setState({ forwardAnimation: true })
+									this.state.FormCompletetion >= 1 && this.setState({ hiddenBackButton: false })
 								}, 10);
 								this.textInput.input.value = ''
+								this.textInput.input.focus()
 								if (this.state.FormCompletetion === 3) {
-									this.setState({hiddenSubmitButton: false, hiddenEnterButton: true })
+									this.setState({ hiddenSubmitButton: false, hiddenEnterButton: true })
 								}
+
 							}}
 						/>
 
