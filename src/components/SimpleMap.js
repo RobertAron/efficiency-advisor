@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Paper from 'material-ui/Paper'
 
 import Map from './Map';
 const google = window.google;
@@ -28,7 +29,6 @@ class SimpleMap extends Component {
 				travelMode
 			}, function (directions, status) {
 				if (status === 'OK') {
-					console.log(directions)
 					self.setState({
 						directions,
 						flightPath: null
@@ -70,12 +70,17 @@ class SimpleMap extends Component {
 		return this.state.directions.routes[0].legs[0].distance;
 	}
 
+	componentWillReceiveProps(nextProps,nextState){
+		const {origin,destination,travelMode} = nextProps;
+		this.drawRoute(origin,destination,travelMode);
+	}
+
 
 
 	render() {
 		return (
 			// Important! Always set the container height explicitly
-			<div style={{ height: '50vh', width: '100%' }}>
+			<Paper style={{ height: '40%', width: '40%' }} zDepth={3}>
 				<Map
 					loadingElement={<div style={{ height: `100%` }} />}
 					containerElement={<div style={{ height: `400px` }} />}
@@ -85,7 +90,7 @@ class SimpleMap extends Component {
 					directions={this.state.directions}
 					flightPath={this.state.flightPath}
 				/>
-			</div>
+			</Paper>
 		);
 	}
 }
