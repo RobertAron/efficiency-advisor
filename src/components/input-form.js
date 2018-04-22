@@ -32,6 +32,7 @@ class InputForm extends Component {
 	
 
 	render() {
+		
 		// {console.log(this.state.hiddenBackButton)}
 		// {console.log(this.state.FormCompletetion)}
 		let div = classNames( 'div', {
@@ -61,8 +62,12 @@ class InputForm extends Component {
 				{text: 'Enter ending Location',  stateString: "endingLocation"}];
 
 		return (
+			<div className="background">
+			<div className="backgroundTint">
 			<div className="formInputs">
 				<div className={div}>
+
+				<h1> Add Trip Details </h1>
 					
 					<div className={formButton}>
 						<RaisedButton
@@ -121,6 +126,11 @@ class InputForm extends Component {
 
 				</div>
 			</div>
+
+			</div>
+
+			</div>
+	
 		);
 	}
 }

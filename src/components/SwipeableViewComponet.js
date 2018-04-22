@@ -28,7 +28,7 @@ class SwipeableViewComponet extends Component {
 				{((this.props.travelMode === 1 || this.props.travelMode === 2) && (this.props.distance.length > 1)) &&
 					<div>
 						<div className="warning">
-							<Warning style={grey50} />
+							<Warning/>
 							<p> Warning: there is a high distance and lack of sidewalks. This may not be the best option</p>
 						</div>
 						<p>Your total {travelModes[this.props.travelMode]} distance would be {this.props.distance} </p>
