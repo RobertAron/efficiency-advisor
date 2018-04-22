@@ -1,0 +1,18 @@
+.warning{
+	background-color: #E91E63;
+	padding: 3px;
+	color: white;
+
+}
+
+.hint{
+	display: flex;
+	flex-direction: row;
+	background-color: #EEEEEE;
+	margin: 5px;
+	border-radius: 3px;
+}
+.southwestlogo{
+	height: 60px;
+
+}

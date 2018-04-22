@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SimpleMap from './SimpleMap'
 import TabableTravelInfo from "./TabableTravelInfo"
+import RaisedButton from 'material-ui/RaisedButton';
 import "./TravelDetails.css"
 
 class TravelDetails extends Component {
@@ -22,6 +23,15 @@ class TravelDetails extends Component {
                     origin={origin}
                     destination={destination}
                     ref={map => { this.map = map; }}
+                />
+                <RaisedButton
+                    className="createTripButton"
+                    label="Plan New Trip"
+                    onClick={ () => {}}
+                />
+                <RaisedButton
+                    className="aboutUsButton"
+                    label="About Us"
                 />
                 <TabableTravelInfo 
                     push={this.tabBasedUpdate} 

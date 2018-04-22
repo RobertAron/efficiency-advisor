@@ -3,3 +3,21 @@
     flex-direction: column;
     justify-content: space-around;
 }
+
+.createTripButton{
+    z-index: 5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.aboutUsButton{
+    z-index: 5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-right: 10px;
+    margin-top: 60px;
+}
