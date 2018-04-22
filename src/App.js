@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Homepage from './components/Homepage'
 import './App.css';
 import InputForm from "./components/input-form"
 
@@ -18,21 +19,7 @@ class App extends Component {
 
     return (
       <MuiThemeProvider>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <InputForm />
-          <SimpleMap
-            ref={map => { this.map = map; }}
-          />
-          <input
-            placeholder="start address here"
-            onChange={e => this.setState({ origin: e.target.value })}
-          />
-          <button onClick={() => this.map.drawRoute(origin, destination, 'FLIGHT')}>Draw route!</button>
-        </div>
+        <Homepage />
       </MuiThemeProvider>
     );
   }
