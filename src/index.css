@@ -3,6 +3,17 @@ body {
   padding: 0;
 }
 
+.hidden {
+  display: none
+}
+
+.formInputs {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
 html {
   font-family: 'Roboto', sans-serif;
 }
