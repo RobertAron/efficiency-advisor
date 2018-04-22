@@ -5,11 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import "./TravelDetails.css"
 
 class TravelDetails extends Component {
-    state = { 
-        year: 1999,
-        make: "Camry",
-        model: "Toyota",
-    };
+
 
 
     tabBasedUpdate = (travelMode) => {
@@ -19,10 +15,18 @@ class TravelDetails extends Component {
 
     constructor(props){
         super(props)
-        if(props.match.params.year) this.setState({year: props.match.params.year});
-        if(props.match.params.make) this.setState({make: props.match.params.make});
-        if(props.match.params.model) this.setState({model: props.match.params.model});
-        setTimeout(()=>console.log(props),3000);
+        this.state = { 
+            year: props.match.params.year? props.match.params.year : "1999",
+            make: props.match.params.make? props.match.params.make : "Toyota",
+            model: props.match.params.model? props.match.params.model :"Camry"
+        };
+        let carInfo = {};
+        // console.log(props.match.params)
+        // if(props.match.params.year) carInfo['year']=props.match.params.year;
+        // if(props.match.params.make) carInfo['make']=props.match.params.make;
+        // if(props.match.params.model) carInfo['model']=props.match.params.model;
+        // this.setState(carInfo)
+        setTimeout(()=>console.log(this.state),3000);
     }
 
     componentWillReceiveProps(nextProps, nextState){
