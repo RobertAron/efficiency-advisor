@@ -87,7 +87,7 @@ class InputForm extends Component {
 					</div>
 
 					<TextField 
-						
+						autoFocus
 						ref={x => this.textInput = x}
 						hintText={fields[this.state.FormCompletetion].hint}
 						floatingLabelText={fields[this.state.FormCompletetion].text}
@@ -105,7 +105,8 @@ class InputForm extends Component {
 									this.setState({forwardAnimation: true})
 									this.state.FormCompletetion >= 1 && this.setState({hiddenBackButton: false})
 								}, 10);
-								this.textInput.input.value = ''
+								this.textInput.input.value = '';
+								this.textInput.input.focus();
 								if (this.state.FormCompletetion === 3) {
 									this.setState({hiddenSubmitButton: false, hiddenEnterButton: true })
 								}
@@ -117,7 +118,7 @@ class InputForm extends Component {
 					<div className={hiddenSubmitButton}>
 						<RaisedButton
 							label="Submit"
-							onClick={() =>  this.props.history.push(`/Map/DRIVING/${this.state.startingLocation}/${this.state.endingLocation}`)}
+							onClick={() =>  this.props.history.push(`/Map/DRIVING/${this.state.startingLocation}/${this.state.endingLocation}/${this.state.carYear}/${this.state.carMake}/${this.state.carModel}`)}
 						/>
 
 					</div>
