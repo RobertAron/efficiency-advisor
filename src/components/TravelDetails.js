@@ -46,8 +46,8 @@ class TravelDetails extends Component {
                     push={this.tabBasedUpdate} 
                     getDistance={() => this.map.getDestinationDistance()}
                     travelMode = {this.props.match.params.travelMode}
-                    year = {this.state.year}/>
-                    make = {this.state.make}/>
+                    year = {this.state.year}
+                    make = {this.state.make}
                     model = {this.state.model}/>
             </div >
         )
