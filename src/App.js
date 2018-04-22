@@ -4,12 +4,16 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Homepage from './components/Homepage'
 import './App.css';
 import InputForm from "./components/input-form"
-import MapDetails from "./components/MapDetails"
+import TravelDetails from "./components/TravelDetails"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 
 class App extends Component {
+  scriptLoaded = false;
+
+
+
   render() {
     return (
       <Router>
@@ -21,7 +25,7 @@ class App extends Component {
             </header>
             <Route exact path="/" component={Homepage} />
             <Route path="/Form" component={InputForm}/>
-            <Route path="/Map" component={MapDetails} />
+            <Route path="/Map/:travelMode(DRIVING|WALKING|BICYCLING|TRANSIT|FLIGHT)/:origin/:destination" component={TravelDetails} />
           </div>
         </MuiThemeProvider>
       </Router>
