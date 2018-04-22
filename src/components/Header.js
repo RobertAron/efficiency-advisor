@@ -11,7 +11,6 @@ class Header extends Component {
           style={{
             display: 'flex',
             height: '100px',
-            position: 'absolute',
             top: '40px'
           }}>
           <img src={Background}
@@ -25,5 +24,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-
