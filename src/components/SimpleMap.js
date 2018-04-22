@@ -15,9 +15,6 @@ class SimpleMap extends Component {
 
 
 	drawRoute = async (origin, destination, travelMode) => {
-		// const origin = "Carrollton"
-		// const destination = "2460 Jefferson Court Ln, Arlington Texas"
-		// const travelMode = "DRIVING"
 
 		// Scope
 		const self = this;
@@ -59,14 +56,13 @@ class SimpleMap extends Component {
 					alert('Directions request failed due to ' + status);
 				}
 			})
-
-
-
 		}
 	}
 
 	componentDidMount() {
 		this.directionsService = new google.maps.DirectionsService();
+		const { origin, destination, travelMode }  = this.props
+		this.drawRoute(origin,destination,travelMode);
 	}
 
 

@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import SimpleMap from './SimpleMap'
 
-class MapDetails extends Component {
-
-    state = {
-        origin: '',
-        destination: 'Arlingon, tX'
-    }
+class TravelDetails extends Component {
 
     render() {
-        const { origin, destination } = this.state;
+        const {travelMode,origin,destination} = this.props.match.params
         return (
             <div>
                 <SimpleMap
+                    travelMode = {travelMode}
+                    origin = {origin}
+                    destination = {destination}
                     ref={map => { this.map = map; }}
                 />
                 <input
@@ -26,4 +24,4 @@ class MapDetails extends Component {
 
 }
 
-export default MapDetails;
+export default TravelDetails;
