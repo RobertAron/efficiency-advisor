@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import SimpleMap from './components/SimpleMap'
 
+
 class App extends Component {
   state = {
     origin: '',
@@ -27,7 +28,7 @@ class App extends Component {
             placeholder="start address here"
             onChange={e => this.setState({ origin: e.target.value })}
           />
-          <button onClick={() => this.map.drawRoute(origin, destination, 'DRIVING')}>Draw route!</button>
+          <button onClick={() => this.map.drawRoute(origin, destination, 'FLIGHT')}>Draw route!</button>
         </div>
       </MuiThemeProvider>
     );
