@@ -7,8 +7,18 @@ import InputForm from "./components/input-form"
 import TravelDetails from "./components/TravelDetails"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from './components/Header';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {green700,green900,teal100} from 'material-ui/styles/colors';
 
 
+const muiTheme = getMuiTheme({
+  palette:{
+    primary1Color: green900,
+    primary2Color: green900,
+    accent1Color: teal100,
+    pickerHeaderColor: teal100
+  }
+})
 
 class App extends Component {
   scriptLoaded = false;
