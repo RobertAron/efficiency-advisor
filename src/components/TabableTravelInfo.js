@@ -55,7 +55,7 @@ class TabableTravelInfo extends Component {
 
     componentWillReceiveProps(nextProps, nextState) {
         this.setSlideBasedString(nextProps.travelMode);
-        setTimeout(()=>this.setCurrentStateDistance(), 500);
+        setTimeout(()=>this.setCurrentStateDistance(), 750);
         console.log(this.state)
     }
 
