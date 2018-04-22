@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardMedia, CardTitle, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import Divider from 'material-ui/Divider';
 import './Homepage.css';
 import StateFarm from '../images/State-farm.png'
 import Southwest from '../images/southwest.png'
@@ -37,11 +38,13 @@ export default class App extends Component {
         </div>
 
         <div className="Footer">
-          <Card className="Slide">
+          <Card className="Slide"
+          >
             <CardMedia
               className="Image">
               <img src={StateFarm} alt="" />
             </CardMedia>
+            <Divider/>
             <CardTitle
               style={{
                 margin: '15px'
@@ -61,21 +64,23 @@ export default class App extends Component {
           <Card className="Slide">
             <CardMedia
               style={{
-                width: '200px',
+                width: '225px',
                 marginTop: '50px',
-                display: 'inline-block'
+                display: 'inline-block',
+                paddingBottom: '45px'
               }}
               className="Image">
               <img src={Southwest} alt="" />
             </CardMedia>
+            <Divider />
             <CardTitle
               style={{
-                margin: '15px'
+                marginTop: '55px',
               }}
               className="Title"
               title="Need a flight? Try Southwest" subtitle="" />
             <CardText>
-              SouthWest was named one of Four Most Fuel Efficient Airlines for Domestic arlines by the internation Council on Clean Transportation in 2015.
+              Southwest was named one of Four Most Fuel Efficient Airlines for Domestic arlines by the internation Council on Clean Transportation in 2015.
             </CardText>
             <CardActions>
             </CardActions>
