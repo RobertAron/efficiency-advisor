@@ -21,7 +21,7 @@ class SwipeableViewComponet extends Component {
 
 	render() {
 		
-		let travelModes = ["Driving", "Walking", "Biclyling", "Transit", "Flight"]
+		let travelModes = ["Driving", "Walking", "Bicyling", "Transit", "Flight"]
 
 		return (
 			<div>
@@ -40,7 +40,7 @@ class SwipeableViewComponet extends Component {
 				{((this.props.travelMode === 1 || this.props.travelMode === 2 ) && (this.props.distance.length < 1))&&
 					<div>
 						<p>Your total {travelModes[this.props.travelMode]} distance is {this.props.distance} </p>
-						<p>400 gal will be used</p>
+						<p>{Number.parseInt(this.props.distance.replace(/,/g,"")) / 25} gal will be used</p>
 					</div>
 				}
 
@@ -48,7 +48,7 @@ class SwipeableViewComponet extends Component {
 				{((this.props.travelMode === 0 || this.props.travelMode > 2 ) && (this.props.distance.length > 1))&&
 					<div>
 						<p>Your total {travelModes[this.props.travelMode]} distance is {this.props.distance} </p>
-						<p>400 gal will be used</p>
+						<p> {Number.parseInt(this.props.distance.replace(/,/g,"")) / 25} gal will be used</p>
 					</div>
 				}
 
@@ -63,7 +63,7 @@ class SwipeableViewComponet extends Component {
 				{((this.props.travelMode === 4 ))&&
 					<div className="hint">
 						<img src={SouthWest} alt="" className="southwestlogo"/>
-						<p> Learn about how safer driving habits can also bring greener driving </p>
+						<p> Click to book a flight today and save! </p>
 					</div>
 				}
 				
