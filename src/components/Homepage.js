@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import './Homepage.css';
 
 export default class App extends Component {
@@ -35,8 +36,8 @@ export default class App extends Component {
                       <p style = {{fontSize: 18}}>"Learn more about Drive Safe and Save"</p>
                     </div>
                 </div>
-                <div className = "Slide">
-                </div>
+                <Card className = "Slide">
+                </Card>
                 <div className = "Slide">
                 </div>
 
