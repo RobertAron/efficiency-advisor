@@ -7,6 +7,16 @@
   height: 80px;
 }
 
+.Header {
+  padding-bottom: 25px;
+  padding-top: 25px;
+  margin: auto;
+  width: 100%;
+  text-indent: 50px;
+  font-size: 36px;
+  text-align: center;
+}
+
 .App-header {
   background-color: #222;
   height: 150px;

@@ -5,10 +5,15 @@ import './Homepage.css';
 import StateFarm from '../images/State-farm.png'
 import Southwest from '../images/southwest.png'
 import { RaisedButton } from 'material-ui';
+import { Link } from 'react-router-dom'
+import './input-form.js'
 
 export default class App extends Component {
   constructor(props) {
     super(props);
+
+    this.goForward = this.goForward.bind(this)
+
 
     this.state = {
 
@@ -17,28 +22,35 @@ export default class App extends Component {
     //Bind functions this.toggleHeadline = this.toggleHeadline.bind(this);
   }
 
+  goForward() {
+    this.props.history.push('/Form')
+  }
+
   render() {
     return (
       <div className="Container">
-        <h1 className="Header">Our Project Title Here</h1>
-
         <div className={["Box", "Text-center"].join(' ')}>
           <p className="Text-center">A Fuel Saver and Money Saver</p>
           <h2 className="Text-center"> What is the most energy efficient mode of transportation for my trip? </h2>
-          <RaisedButton onClick={() => alert('hi')}
+          <RaisedButton
             backgroundColor = "#27ae60"
             labelStyle = {{
               textTransform: 'none',
               color: 'white',
             }}
             className = "Button"
-            buttonStyle={{ height: '50px' }}
-            label="Create a trip">
+            buttonStyle={{ 
+              height: '50px' 
+            }}
+            label="Create a trip"
+            onClick={this.goForward}>
+            
           </RaisedButton>
         </div>
 
         <div className="Footer">
           <Card className="Slide"
+          zDepth = {3}
           >
             <CardMedia
               className="Image">
@@ -57,11 +69,13 @@ export default class App extends Component {
             <CardActions>
             </CardActions>
           </Card>
-          <Card className="Slide">
+          <Card className="Slide"
+          zDepth = {3}>
 
           </Card>
 
-          <Card className="Slide">
+          <Card className="Slide"
+          zDepth = {3}>
             <CardMedia
               style={{
                 width: '225px',
