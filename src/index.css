@@ -10,6 +10,11 @@ body {
 .formInputs {
   display: flex;
   justify-content: center;
+  flex-direction: space-between;
+}
+
+.notHidden {
+  display: flex;
   flex-direction: row;
 }
 
