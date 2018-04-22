@@ -10,6 +10,8 @@ class MapDetails extends Component {
 
     render() {
         const { origin, destination } = this.state;
+        console.log(this.props)
+        console.log(process.env)
         return (
             <div>
                 <SimpleMap

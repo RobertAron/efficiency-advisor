@@ -21,7 +21,7 @@ class App extends Component {
             </header>
             <Route exact path="/" component={Homepage} />
             <Route path="/Form" component={InputForm}/>
-            <Route path="/Map" component={MapDetails} />
+            <Route path="/Map/:id?/:type?" component={MapDetails} />
           </div>
         </MuiThemeProvider>
       </Router>
