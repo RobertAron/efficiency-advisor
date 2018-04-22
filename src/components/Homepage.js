@@ -7,6 +7,7 @@ import Southwest from '../images/southwest.png'
 import Uber from '../images/uber.png'
 import { RaisedButton } from 'material-ui';
 import { Link } from 'react-router-dom'
+import Header from './Header'
 import './input-form.js'
 
 export default class App extends Component {
@@ -29,6 +30,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="Container">
+        <div><Header /></div>
         <div className={["Box", "Text-center"].join(' ')}>
           <p className="Text-center">A Fuel Saver and Money Saver</p>
           <h2 className="Text-center"
