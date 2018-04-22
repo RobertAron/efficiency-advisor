@@ -28,7 +28,7 @@ class SwipeableViewComponet extends Component {
 				{((this.props.travelMode === 1 || this.props.travelMode === 2 ) && (this.props.distance.length > 1) )&&
 					<div>
 						<div className="warning">
-							<Warning style={grey50} />
+							<Warning/>
 							<p> Warning: there is a high distance and lack of sidewalks. This may not be the best option</p>
 						</div>
 						
@@ -63,7 +63,7 @@ class SwipeableViewComponet extends Component {
 				{((this.props.travelMode === 4 ))&&
 					<div className="hint">
 						<img src={SouthWest} alt="" className="southwestlogo"/>
-						<p> Click to book a flight today and save! </p>
+						<p> Click to book a flight from the top four fuel efficient airline! </p>
 					</div>
 				}
 				

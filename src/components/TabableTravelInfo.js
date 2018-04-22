@@ -24,7 +24,7 @@ class TabableTravelInfo extends Component {
             walkingDistance:0,
             bicyclingDistance:0,
             transitDistance:0,
-            flightDistnace:0
+            flightDistnace: 0
         }
     }
 
