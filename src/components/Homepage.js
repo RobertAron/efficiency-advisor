@@ -1,48 +1,88 @@
 import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import { Card, CardMedia, CardTitle, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import './Homepage.css';
+import StateFarm from '../images/State-farm.png'
+import Southwest from '../images/southwest.png'
+import { RaisedButton } from 'material-ui';
 
 export default class App extends Component {
-      constructor(props){
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
+    this.state = {
 
-        }
+    }
 
-        //Bind functions this.toggleHeadline = this.toggleHeadline.bind(this);
-      }
+    //Bind functions this.toggleHeadline = this.toggleHeadline.bind(this);
+  }
 
-      render(){
-        return(
-          <div className="Container">
-            <h1 className="Header">Our Project Title Here</h1>
+  render() {
+    return (
+      <div className="Container">
+        <h1 className="Header">Our Project Title Here</h1>
 
-            <div className={["Box", "Text-center"].join(' ')}>
-                <p className = "Text-center">A Fuel Saver and Money Saver</p>
-                <h2 className = "Text-center"> What is the most energy efficient mode of transportation for my trip? </h2>
-                <div className="Button">
-                    <p className = "Text-white">Create a trip</p>
-                </div>
-            </div>
+        <div className={["Box", "Text-center"].join(' ')}>
+          <p className="Text-center">A Fuel Saver and Money Saver</p>
+          <h2 className="Text-center"> What is the most energy efficient mode of transportation for my trip? </h2>
+          <RaisedButton onClick={() => alert('hi')}
+            backgroundColor = "#27ae60"
+            labelStyle = {{
+              textTransform: 'none',
+              color: 'white',
+            }}
+            className = "Button"
+            buttonStyle={{ height: '50px' }}
+            label="Create a trip">
+          </RaisedButton>
+        </div>
 
-            <div className = "Footer">
-                <div className = "Slide">
-                    <div className = "Icon">
-                    </div>
-                    <div className = "Slide-Text">
-                      <p style = {{color: "red",fontSize: 20}}>Get insurance rewards with State Farm</p>
-                      <p style = {{fontSize: 16}}>"State Farm is a long-time proponent of safe driving, but did you know that safer driving habits can also bring greener driving results?"</p>
-                      <p style = {{fontSize: 18}}>"Learn more about Drive Safe and Save"</p>
-                    </div>
-                </div>
-                <Card className = "Slide">
-                </Card>
-                <div className = "Slide">
-                </div>
+        <div className="Footer">
+          <Card className="Slide">
+            <CardMedia
+              className="Image">
+              <img src={StateFarm} alt="" />
+            </CardMedia>
+            <CardTitle
+              style={{
+                margin: '15px'
+              }}
+              className="Title"
+              title="Get insurance Rewards with State Farm" subtitle="State Farm® is a long-time proponent of safe driving. But did you know that safer driving habits can also bring greener driving results?" />
+            <CardText>
+              Learn more about State Farm's Drive Safe and Save
+            </CardText>
+            <CardActions>
+            </CardActions>
+          </Card>
+          <Card className="Slide">
 
-            </div>
-          </div>
-        )
-      }
+          </Card>
+
+          <Card className="Slide">
+            <CardMedia
+              style={{
+                width: '200px',
+                marginTop: '50px',
+                display: 'inline-block'
+              }}
+              className="Image">
+              <img src={Southwest} alt="" />
+            </CardMedia>
+            <CardTitle
+              style={{
+                margin: '15px'
+              }}
+              className="Title"
+              title="Need a flight? Try Southwest" subtitle="" />
+            <CardText>
+              SouthWest was named one of Four Most Fuel Efficient Airlines for Domestic arlines by the internation Council on Clean Transportation in 2015.
+            </CardText>
+            <CardActions>
+            </CardActions>
+          </Card>
+
+        </div>
+      </div>
+    )
+  }
 }

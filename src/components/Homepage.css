@@ -29,12 +29,8 @@
   }
 
   .Button {
-    background-color: #47525E;
-    border-radius: 5px;
-    width: 192px;
+    width: 150px;
     height: 50px;
-    margin-top: 20px;
-    display: inline-block;
   }
 
   .Icon {
@@ -42,6 +38,12 @@
       background-color: white;
       height: 150px;
       width: 200px;
+  }
+
+  .Image {
+    display: inline-block;
+    width: 150px;
+    margin-top: 50px;
   }
 
   .Text-white {
@@ -66,8 +68,14 @@
     width: 400px;
     height: 550px;
     margin: 25px;
-    justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    cursor: pointer;
+  }
+
+  .Slide:hover {
+    margin-top: 0;
   }
   
   .App-logo {
