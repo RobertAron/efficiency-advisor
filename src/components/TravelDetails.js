@@ -50,7 +50,7 @@ class TravelDetails extends Component {
                 <RaisedButton
                     className="createTripButton"
                     label="Plan New Trip"
-                    onClick={ () => {}}
+                    onClick={ () => {this.props.history.push('/')}}
                 />
                 <RaisedButton
                     className="aboutUsButton"
