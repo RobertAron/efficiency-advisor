@@ -12,9 +12,13 @@
   padding-top: 25px;
   margin: auto;
   width: 100%;
-  text-indent: 50px;
   font-size: 36px;
   text-align: center;
+}
+
+.Background {
+  overflow: hidden;
+  background-size: cover;
 }
 
 .App-header {
