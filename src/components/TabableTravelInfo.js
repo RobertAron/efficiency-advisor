@@ -21,25 +21,25 @@ class TabableTravelInfo extends Component {
         this.state = {
             slideIndex,
             drivingDistance: 0,
-            walkingDistance:0,
-            bicyclingDistance:0,
-            transitDistance:0,
-            flightDistnace:0
+            walkingDistance: 0,
+            bicyclingDistance: 0,
+            transitDistance: 0,
+            flightDistnace: 0
         }
     }
 
-    componentWillMount(){
-        setTimeout(()=>this.setCurrentStateDistance(), 1500);
+    componentWillMount() {
+        setTimeout(() => this.setCurrentStateDistance(), 1500);
     }
 
-    setCurrentStateDistance(){
-        console.log(this.props.getDistance());
-        switch(this.state.slideIndex){
-            case 0: this.setState({drivingDistance: this.props.getDistance().text}); break;
-            case 1: this.setState({walkingDistance: this.props.getDistance().text}); break;
-            case 2: this.setState({bicyclingDistance: this.props.getDistance().text}); break;
-            case 3: this.setState({transitDistance: this.props.getDistance().text}); break;
-            case 4: this.setState({flightDistnace: this.props.getDistance().text}); break;
+    setCurrentStateDistance() {
+        console.log(this.props);
+        switch (this.state.slideIndex) {
+            case 0: this.setState({ drivingDistance: this.props.getDistance().text }); break;
+            case 1: this.setState({ walkingDistance: this.props.getDistance().text }); break;
+            case 2: this.setState({ bicyclingDistance: this.props.getDistance().text }); break;
+            case 3: this.setState({ transitDistance: this.props.getDistance().text }); break;
+            case 4: this.setState({ flightDistnace: this.props.getDistance().text }); break;
         }
     }
 
@@ -55,7 +55,7 @@ class TabableTravelInfo extends Component {
 
     componentWillReceiveProps(nextProps, nextState) {
         this.setSlideBasedString(nextProps.travelMode);
-        setTimeout(()=>this.setCurrentStateDistance(), 750);
+        setTimeout(() => this.setCurrentStateDistance(), 750);
         console.log(this.state)
     }
 
@@ -85,17 +85,20 @@ class TabableTravelInfo extends Component {
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                 >
-                    <SwipeableViewComponet 
+                    <SwipeableViewComponet
                         distance={this.state.drivingDistance}
                         travelMode={this.state.slideIndex}
+                        make={this.props.make}
+                        model={this.props.model}
+                        year={this.props.year}
                     />
 
-                    <SwipeableViewComponet 
+                    <SwipeableViewComponet
                         distance={this.state.walkingDistance}
                         travelMode={this.state.slideIndex}
                     />
 
-                    <SwipeableViewComponet 
+                    <SwipeableViewComponet
                         distance={this.state.bicyclingDistance}
                         travelMode={this.state.slideIndex}
                     />
