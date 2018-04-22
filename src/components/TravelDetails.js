@@ -25,7 +25,6 @@ class TravelDetails extends Component {
                 />
                 <TabableTravelInfo push={this.tabBasedUpdate} />
                 <input
-
                     placeholder="start address here"
                     onChange={e => this.setState({ origin: e.target.value })}
                 />

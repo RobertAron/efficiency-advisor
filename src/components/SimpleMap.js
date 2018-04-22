@@ -4,6 +4,9 @@ import Paper from 'material-ui/Paper'
 import Map from './Map';
 const google = window.google;
 
+const mapColorStyles = require("../mapstyles.json");
+
+
 class SimpleMap extends Component {
 	static defaultProps = {};
 
@@ -81,13 +84,14 @@ class SimpleMap extends Component {
 	render() {
 		return (
 			// Important! Always set the container height explicitly
-			<Paper style={{ height: '40%', width: '40%' }} zDepth={3}>
+			<Paper style={{ height: '70%', width: '100%' }} zDepth={3}>
 				<Map
 					loadingElement={<div style={{ height: `100%` }} />}
-					containerElement={<div style={{ height: `400px` }} />}
+					containerElement={<div style={{ height:`80vh`, width: `100%` }} />}
 					mapElement={<div style={{ height: `100%` }} />}
 					defaultCenter={{ lat: 40, lng: -95 }}
 					defaultZoom={4}
+					defaultOptions={{ styles: mapColorStyles }}
 					directions={this.state.directions}
 					flightPath={this.state.flightPath}
 				/>
