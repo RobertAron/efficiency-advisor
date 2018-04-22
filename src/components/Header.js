@@ -4,8 +4,8 @@ import '../App.css';
 class Header extends Component {
     render() {
       return (
-<       header>
-            <h1 className="Header">Our Project Title Here</h1>
+        <header>
+            <h2 className="Header">Our Project Title Here</h2>
         </header>
       );
     }

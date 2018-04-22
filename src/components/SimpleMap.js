@@ -123,7 +123,7 @@ class SimpleMap extends Component {
 			<Paper style={{ height: '70%', width: '100%' }} zDepth={3}>
 				<Map
 					loadingElement={<div style={{ height: `100%` }} />}
-					containerElement={<div style={{ height:`88vh`, width: `100%` }} />}
+					containerElement={<div style={{ height:`100vh`, width: `100%` }} />}
 					mapElement={<div style={{ height: `100%` }} />}
 					defaultCenter={{ lat: 40, lng: -95 }}
 					defaultZoom={4}
