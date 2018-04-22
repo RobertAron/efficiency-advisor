@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Paper from 'material-ui/Paper'
 
 import Map from './Map';
 const google = window.google;
@@ -9,15 +10,13 @@ class SimpleMap extends Component {
 	state = {
 		startLocation: null,
 		endLocation: null,
-		direction: null,
+		directions: null,
 		flightPath: null,
+		destinationDistance: null,
 	};
 
 
 	drawRoute = async (origin, destination, travelMode) => {
-		// const origin = "Carrollton"
-		// const destination = "2460 Jefferson Court Ln, Arlington Texas"
-		// const travelMode = "DRIVING"
 
 		// Scope
 		const self = this;
@@ -45,12 +44,12 @@ class SimpleMap extends Component {
 				travelMode: "DRIVING"
 			}, function (directions, status) {
 				if (status === 'OK') {
+					console.log(directions.routes[0].legs[0].distance.text)
 					const { start_location,end_location} =  directions.routes[0].legs[0];
 					const flightPath = [
 						{ lat: start_location.lat(), lng: start_location.lng() },
 						{ lat: end_location.lat(), lng: end_location.lng() }
 					];
-					console.log(directions.routes[0].legs[0].start_location)
 					self.setState({
 						flightPath,
 						directions: null
@@ -59,14 +58,22 @@ class SimpleMap extends Component {
 					alert('Directions request failed due to ' + status);
 				}
 			})
-
-
-
 		}
 	}
 
 	componentDidMount() {
 		this.directionsService = new google.maps.DirectionsService();
+		const { origin, destination, travelMode }  = this.props
+		this.drawRoute(origin,destination,travelMode);
+	}
+
+	getDestinationDistance(){
+		return this.state.directions.routes[0].legs[0].distance;
+	}
+
+	componentWillReceiveProps(nextProps,nextState){
+		const {origin,destination,travelMode} = nextProps;
+		this.drawRoute(origin,destination,travelMode);
 	}
 
 
@@ -74,7 +81,7 @@ class SimpleMap extends Component {
 	render() {
 		return (
 			// Important! Always set the container height explicitly
-			<div style={{ height: '50vh', width: '100%' }}>
+			<Paper style={{ height: '40%', width: '40%' }} zDepth={3}>
 				<Map
 					loadingElement={<div style={{ height: `100%` }} />}
 					containerElement={<div style={{ height: `400px` }} />}
@@ -84,7 +91,7 @@ class SimpleMap extends Component {
 					directions={this.state.directions}
 					flightPath={this.state.flightPath}
 				/>
-			</div>
+			</Paper>
 		);
 	}
 }
