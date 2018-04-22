@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
+import InputForm from "./components/input-form"
+
 import SimpleMap from './components/SimpleMap'
 
 
@@ -21,6 +23,7 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
           </header>
+          <InputForm />
           <SimpleMap
             ref={map => { this.map = map; }}
           />
