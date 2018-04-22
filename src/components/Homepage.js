@@ -30,7 +30,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="Container">
-        <Header> </Header>
+        <Header />
         <div className={["Box", "Text-center"].join(' ')}>
           <p className="Text-center">A Fuel Saver and Money Saver</p>
           <h2 className="Text-center"> What is the most energy efficient mode of transportation for my trip? </h2>
